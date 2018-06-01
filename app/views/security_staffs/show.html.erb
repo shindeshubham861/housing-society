@@ -1,0 +1,34 @@
+ <p id="notice"><%= notice %></p>
+
+
+<div class="intru">
+
+<h1 style="font-size: 26px; font-style: bold;font: bold">Security Staff</h1>
+
+<p>
+  <strong>Staff info:</strong>
+  <%= @security_staff.staff_info %>
+</p>
+
+<p>
+  <strong>Guard name:</strong>
+  <%= @security_staff.guard_name %>
+</p>
+
+<p>
+  <strong>Salary:</strong>
+  <%= @security_staff.salary %>
+</p>
+
+<p>
+  <strong>Work timing:</strong>
+  <%= @security_staff.work_timing %>
+</p>
+
+<p>
+  <strong>Daily task:</strong>
+  <%= @security_staff.daily_task %>
+</p>
+
+<%= link_to 'Edit', edit_security_staff_path(@security_staff),class: "btn btn-success" %> |
+<%= link_to 'Back', security_staffs_path,class: "btn btn-info" %>

@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+  <div class="feturedsection">
+    <h1 class="text-center"><span class="bdots">&bullet;</span>P A R K I N G S<span class="carstxt">R E S E R V E D</span>&bullet;</h1>
+  </div>
+
+
+<div class="row">
+ <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+
+<div class="content table-responsive table-full-width">
+<table class="table table-hover table-striped table-responsive table-bordered js-basic-example dataTable">
+   <thead>
+    <tr>
+      <th><b style="font-size: 17px">Vehicle name</b></th>
+      <th><b style="font-size: 17px">Number</b></th>
+      <th><b style="font-size: 17px">Place</b></th>
+      <th>Timing</th>
+      <th><b style="font-size: 17px">Owner name</b></th>
+      <th><b style="font-size: 17px">No of vehicles</b></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parkings.each do |parking| %>
+      <tr>
+        <td><b><%= parking.vehicle_name %></b></td>
+        <td><b><%= parking.number %></b></td>
+        <td><b><%= parking.place %></b></td>
+        <td><b><%= parking.timing %></b></td>
+        <td><b><%= parking.owner_name %></b></td>
+        <td><b><%= parking.no_of_vehicles %></b></td>
+        <td><%= link_to 'Edit', edit_parking_path(parking),class: "btn btn-success" %></td>
+        <td><button id="<%= parking.id %>" class="btn btn-danger"  onclick="test(this.id)">Destroy</button></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<br>
+
+<script type="text/javascript">
+  function test(ida)
+  {
+    location.href= "/parking/"+ida;
+  }
+</script>

@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+  <div class="feturedsection">
+    <h1 class="text-center"><span class="bdots">&bullet;</span>R E C O R D S<span class="carstxt">S T O R E D</span>&bullet;</h1>
+  </div>
+
+<div class="row">
+ <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+
+<div class="content table-responsive table-full-width">
+ <table class="table table-hover table-striped table-responsive table-bordered js-basic-example dataTable"> 
+ <thead>
+    <tr>
+      <th><b style="font-size: 17px">Name</th>
+      <th><b style="font-size: 17px">Image</th>
+      <th><b style="font-size: 17px">Family members</th>
+      <th><b style="font-size: 17px">Flat no</th>
+      <th><b style="font-size: 17px">Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @records.each do |record| %>
+      <tr>
+        <td><b><%= record.name %></b></td>
+        <td><%= image_tag record.image.url(:medium) %></td>
+        <td><b><%= record.family_members %></b></td>
+        <td><b><%= record.room_no %></b></td>
+        <td><b><%= record.email %></b></td>
+        <td><%= link_to 'Edit', edit_record_path(record),class: "btn btn-success" %></td>
+        <td><button id="<%= record.id %>" class= "btn btn-danger"  onclick="test(this.id)">Destroy</button></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+
+<br>
+<script type="text/javascript">
+  function test(ida)
+  {
+    location.href= "/record/"+ida;
+  }
+</script>

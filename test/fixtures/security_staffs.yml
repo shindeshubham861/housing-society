@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  staff_info: MyText
+  guard_name: MyString
+  salary: 1
+  work_timing: MyString
+  daily_task: MyText
+
+two:
+  staff_info: MyText
+  guard_name: MyString
+  salary: 1
+  work_timing: MyString
+  daily_task: MyText

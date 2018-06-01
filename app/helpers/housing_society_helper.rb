@@ -1,0 +1,2 @@
+module HousingSocietyHelper
+end

@@ -1,0 +1,2 @@
+class SecurityStaff < ApplicationRecord
+end

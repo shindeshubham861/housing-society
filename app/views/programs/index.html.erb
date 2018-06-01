@@ -1,0 +1,48 @@
+ <p id="notice"><%= notice %></p>
+
+  <div class="feturedsection">
+    <h1 class="text-center"><span class="bdots">&bullet;</span>P R O G R A M S<span class="carstxt">O R G A N I Z E D</span>&bullet;</h1>
+  </div>
+
+<div class="row">
+ <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+
+<div class="content table-responsive table-full-width">
+<table class="table table-hover table-striped table-responsive table-bordered js-basic-example dataTable">
+  <thead>
+      <th><b style="font-size: 17px">Program name<b></th>
+      <th><b style="font-size: 17px">Description</b></th>
+      <th><b style="font-size: 17px">Start date</b></th>
+      <th><b style="font-size: 17px">End date</b></th>
+      <th><b style="font-size: 17px">Amount</b></th>
+      <th><b style="font-size: 17px">Timing</b></th>
+      <th colspan="2"></th>
+  </thead>
+
+  <tbody>
+    <% @programs.each do |program| %>
+      <tr>
+        <td><b><%= program.program_name %></b></td>
+        <td><b><%= program.description %></b></td>
+        <td><b><%= program.start_date %></b></td>
+        <td><b><%= program.end_date %></b></td>
+        <td><b><%= program.amount %></b></td>
+        <td><b><%= program.timing %></b></td>
+        <td><%= link_to 'Edit', edit_program_path(program),class: "btn btn-success" %></td>
+        <td><button id="<%= program.id %>" class="btn btn-danger"  onclick="test(this.id)">Destroy</button></td>
+      </tr>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<br>
+
+<script type="text/javascript">
+  function test(ida)
+  {
+    location.href= "/program/"+ida;
+  }
+</script>

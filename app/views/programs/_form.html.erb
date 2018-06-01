@@ -1,0 +1,48 @@
+<%= form_with(model: program, local: true) do |form| %>
+  <% if program.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(program.errors.count, "error") %> prohibited this program from being saved:</h2>
+
+      <ul>
+      <% program.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :program_name %>
+    <%= form.text_area :program_name, class: "form-control", placeholder: "Program name", style: 'width: 300px;' %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-control", placeholder: "Description", style: 'width: 300px;' %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.date_select :end_date %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount, class: "form-control", placeholder: "Amount", style: 'width: 300px;' %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.label :timing %>
+    <%= form.time_select :timing %>
+  </div>
+<br>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+</div>
+<% end %>

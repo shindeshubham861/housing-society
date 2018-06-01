@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<div class="intru">
+
+<h1 style="font-size: 26px; font-style: bold;font: bold">Program</h1>
+  
+<p>
+  <strong>Name:</strong>
+  <%= @record.name %>
+</p>
+
+<%=image_tag @record.image.url(:medium) %>
+
+
+<p>
+  <strong>Family members:</strong>
+  <%= @record.family_members %>
+</p>
+
+<p>
+  <strong>Flat no:</strong>
+  <%= @record.room_no %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @record.email %>
+</p>
+<br>
+<%= link_to 'Edit', edit_record_path(@record),class: "btn btn-success" %> |
+<%= link_to 'Back', records_path,class: "btn btn-info" %>
+</div>

@@ -1,0 +1,44 @@
+ <p id="notice"><%= notice %></p>
+
+<div class="intru">
+
+
+<h1 style="font-size: 26px; font-style: bold;font: bold">Program</h1>
+
+<p>
+  <strong>Program name:</strong>
+  <%= @program.program_name %>  
+</p>
+
+
+<p>  
+  <strong>Description:</strong>
+  <%= @program.description %>  
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @program.start_date %>  
+</p>
+
+<p>  
+  <strong>End date:</strong>
+  <%= @program.end_date %>  
+</p>
+
+<p>  
+  <strong>Amount:</strong>
+  <%= @program.amount %>  
+</p>
+
+<p>  
+  <strong>Timing:</strong>
+  <%= @program.timing %>  
+</p>
+
+
+
+<br>
+  <%= link_to 'Edit', edit_program_path(@program),class: "btn btn-success" %> |
+<%= link_to 'Back', programs_path,class: "btn btn-info" %>
+</div>

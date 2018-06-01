@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vehicle_name: MyString
+  number: MyString
+  place: MyString
+  timing: 2018-05-19 14:13:17
+  owner_name: MyText
+  no_of_vehicles: 1
+
+two:
+  vehicle_name: MyString
+  number: MyString
+  place: MyString
+  timing: 2018-05-19 14:13:17
+  owner_name: MyText
+  no_of_vehicles: 1

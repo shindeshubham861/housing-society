@@ -1,0 +1,46 @@
+ <%= form_with(model: security_staff, local: true) do |form| %>
+  <% if security_staff.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(security_staff.errors.count, "error") %> prohibited this security_staff from being saved:</h2>
+
+      <ul>
+      <% security_staff.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :staff_info %>
+    <%= form.text_area :staff_info, class: "form-control", placeholder: "Staff Info", style: 'width: 300px;' %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.label :guard_name %>
+    <%= form.text_field :guard_name, class: "form-control", placeholder: "Guard name", style: 'width: 300px;' %>
+  </div>
+<br>
+
+  <div class="field">
+    <%= form.label :salary %>
+    <%= form.number_field :salary, class: "form-control", placeholder: "Salary", style: 'width: 300px;' %>
+  </div>
+<br>
+
+  <div class="field">
+    <%= form.label :work_timing %>
+    <%= form.text_field :work_timing, class: "form-control", placeholder: "Work timing", style: 'width: 300px;' %>
+  </div>
+<br>
+
+  <div class="field">
+    <%= form.label :daily_task %>
+    <%= form.text_area :daily_task, class: "form-control", placeholder: "Daily task", style: 'width: 300px;' %>
+  </div>
+<br>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+</div>
+<% end %>
