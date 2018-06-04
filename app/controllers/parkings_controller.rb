@@ -10,6 +10,7 @@ class ParkingsController < ApplicationController
   # GET /parkings/1
   # GET /parkings/1.json
   def show
+    redirect_to '/parkings'
   end
 
   # GET /parkings/new

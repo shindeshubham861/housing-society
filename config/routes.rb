@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'home/index'
+  root 'home#index'
+  get 'housing/index'
+
+
+  get 'programs/index'
   root 'programs#index'
   root 'programs#new'
   resources :programs
@@ -17,6 +23,8 @@ Rails.application.routes.draw do
   root 'security_staffs#new'
   resources :security_staffs
   get :"security_staff/:id", to:"security_staffs#destroy"
+
+
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

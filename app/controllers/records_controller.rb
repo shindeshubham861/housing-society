@@ -10,6 +10,7 @@ class RecordsController < ApplicationController
   # GET /records/1
   # GET /records/1.json
   def show
+    redirect_to '/records'
   end
 
   # GET /records/new

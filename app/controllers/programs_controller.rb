@@ -5,11 +5,13 @@ class ProgramsController < ApplicationController
   # GET /programs.json
   def index
     @programs = Program.all
+   
   end
 
   # GET /programs/1
   # GET /programs/1.json
   def show
+   redirect_to '/programs'
   end
 
   # GET /programs/new

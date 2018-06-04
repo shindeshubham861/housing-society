@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2018_05_24_070930) do
 
   create_table "records", force: :cascade do |t|
     t.string "name"
+    t.string "photo"
     t.integer "family_members"
     t.decimal "room_no"
     t.string "email"

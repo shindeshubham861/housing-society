@@ -10,6 +10,7 @@ class SecurityStaffsController < ApplicationController
   # GET /security_staffs/1
   # GET /security_staffs/1.json
   def show
+    redirect_to '/security_staffs'
   end
 
   # GET /security_staffs/new
