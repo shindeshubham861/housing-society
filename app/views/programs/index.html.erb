@@ -1,45 +1,61 @@
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css"> 
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+<style type="text/css">
+.teble{
+  width: auto;
+  font-size: 17px;
+}
+  
+</style>
+
+
  <p id="notice"><%= notice %></p>
 
   <div class="feturedsection">
     <h1 class="text-center"><span class="bdots">&bullet;</span>P R O G R A M S<span class="carstxt">O R G A N I Z E D</span>&bullet;</h1>
   </div>
 
-<div class="row">
- <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
 
-<div class="content table-responsive table-full-width">
-<table class="table table-hover table-striped table-responsive table-bordered js-basic-example dataTable">
+<table id="example" class="table table-striped table-bordered" style="width:100%">
   <thead>
-      <th><b style="font-size: 17px">Program name<b></th>
-      <th><b style="font-size: 17px">Description</b></th>
-      <th><b style="font-size: 17px">Start date</b></th>
-      <th><b style="font-size: 17px">End date</b></th>
-      <th><b style="font-size: 17px">Amount</b></th>
-      <th><b style="font-size: 17px">Timing</b></th>
-      <th colspan="2"></th>
+
+      <th>Program name</th>
+      <th>Description</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Amount</th>
+      <th>Timing</th>
+      <th></th>
+
   </thead>
 
   <tbody>
     <% @programs.each do |program| %>
       <tr>
-        <td><b><%= program.program_name %></b></td>
-        <td><b><%= program.description %></b></td>
-        <td><b><%= program.start_date %></b></td>
-        <td><b><%= program.end_date %></b></td>
-        <td><b><%= program.amount %></b></td>
-        <td><b><%= program.timing %></b></td>
-        <td><%= link_to 'Edit', edit_program_path(program),class: "btn btn-success" %></td>
-        <td><button id="<%= program.id %>" class="btn btn-danger"  onclick="test(this.id)">Destroy</button></td>
+        <td><%= program.program_name %></td>
+        <td><%= program.description %></td>
+        <td><%= program.start_date %></td>
+        <td><%= program.end_date %></td>
+        <td><%= program.amount %></td>
+        <td><%= program.timing %></td>
+        <td><%= link_to 'Edit', edit_program_path(program),class: "btn btn-success" %><button id="<%= program.id %>" class="btn btn-danger"  onclick="test(this.id)">Destroy</button></td>
       </tr>
       </tr>
     <% end %>
   </tbody>
 </table>
  <%= link_to 'New Program', new_program_path,class: "btn btn-success" %>
-</div>
-</div>
-</div>
+
 <br>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#example').DataTable();
+} );
+
+</script>
 
 <script type="text/javascript">
   function test(ida)

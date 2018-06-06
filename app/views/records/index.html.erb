@@ -1,14 +1,21 @@
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css"> 
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+
+
+
 <p id="notice"><%= notice %></p>
 
   <div class="feturedsection">
     <h1 class="text-center"><span class="bdots">&bullet;</span>R E C O R D S<span class="carstxt">S T O R E D</span>&bullet;</h1>
   </div>
 
-<div class="row">
- <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+
 
 <div class="content table-responsive table-full-width">
- <table class="table table-hover table-striped table-responsive table-bordered js-basic-example dataTable"> 
+ <table id="example" class="table table-striped table-bordered" style="width:100%"> 
  <thead>
     <tr>
       <th><b style="font-size: 17px">Name</th>
@@ -16,30 +23,36 @@
       <th><b style="font-size: 17px">Family members</th>
       <th><b style="font-size: 17px">Flat no</th>
       <th><b style="font-size: 17px">Email</th>
-      <th colspan="3"></th>
+       <th></th>
+
     </tr>
   </thead>
 
   <tbody>
     <% @records.each do |record| %>
       <tr>
-        <td><b><%= record.name %></b></td>
+        <td><%= record.name %></td>
         <td><%= image_tag record.image.url(:medium) %></td>
-        <td><b><%= record.family_members %></b></td>
-        <td><b><%= record.room_no %></b></td>
-        <td><b><%= record.email %></b></td>
-        <td><%= link_to 'Edit', edit_record_path(record),class: "btn btn-success" %></td>
-        <td><button id="<%= record.id %>" class= "btn btn-danger"  onclick="test(this.id)">Destroy</button></td>
+        <td><%= record.family_members %></td>
+        <td><%= record.room_no %></td>
+        <td><%= record.email %></td>
+        <td><%= link_to 'Edit', edit_record_path(record),class: "btn btn-success" %><button id="<%= record.id %>" class= "btn btn-danger"  onclick="test(this.id)">Delete</button></td>
       </tr>
     <% end %>
   </tbody>
 </table>
  <%= link_to 'New Record', new_record_path,class: "btn btn-success" %>
 </div>
-</div>
-</div>
+
 
 <br>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#example').DataTable();
+} );
+
+</script>
+
 <script type="text/javascript">
   function test(ida)
   {
